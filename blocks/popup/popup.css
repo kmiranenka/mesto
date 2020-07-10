@@ -1,0 +1,18 @@
+@import url(./__edit-info/popup__edit-info.css);
+@import url(./__heading/popup__heading.css);
+@import url(./__input-container/popup__input-container.css);
+@import url(./__item/popup__item.css);
+@import url(./__btn-save/popup__btn-save.css);
+@import url(./__btn-close/popup__btn-close.css);
+@import url(./__close-icon/popup__close-icon.css);
+
+.popup{
+  width:100%;
+  max-width: 1200px;
+  min-height:100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow:hidden;
+  position:fixed;
+  top:0px;
+  display: none;
+}

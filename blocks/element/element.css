@@ -1,0 +1,12 @@
+@import url(./__photo/elemet__photo.css);
+@import url(./__name/element__name.css);
+@import url(./__like/element__like.css);
+
+.element{
+  margin: 0;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
