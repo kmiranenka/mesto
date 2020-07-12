@@ -10,6 +10,7 @@
   max-width: 882px;
   min-width: 282px;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 @media screen and (max-width: 908px){
@@ -27,3 +28,8 @@
   }
 }
 
+@media screen and (max-width: 318px){
+  .profile{
+    padding: 0 9px 36px;
+  }
+}

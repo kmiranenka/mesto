@@ -10,3 +10,21 @@
   max-width: 197px;
   margin: 25px 0 30px 21px;
 }
+
+@media screen and (max-width: 619px){
+  .element__name{
+    max-width: 550px;
+  }
+}
+
+@media screen and (max-width: 462px){
+  .element__name{
+    max-width: 270px;
+  }
+}
+
+@media screen and (max-width: 395px){
+  .element__name{
+    max-width: 197px;
+  }
+}

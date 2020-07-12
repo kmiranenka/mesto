@@ -4,7 +4,8 @@
   background-color: #000000;
   border: 1px solid #ffffff;
   cursor: pointer;
-  align-self: flex-end;
+  align-self: flex-start;
+  margin: 17px 0 0 17px;
 }
 
 .info__edit-button:hover{
@@ -17,6 +18,7 @@
     width: 18px;
     height: 18px;
     padding: 0px;
+    margin-top: 33px;
+    margin-left: 7px;
   }
 }
-

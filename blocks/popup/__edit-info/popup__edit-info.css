@@ -10,8 +10,6 @@
   position: relative;
 }
 
-
-
 @media screen and (max-width: 505px){
   .popup__edit-info{
     max-width: 400px;
@@ -27,5 +25,6 @@
 @media screen and (max-width: 410px){
   .popup__edit-info{
     max-width: 270px;
+    height: 310px;
   }
 }

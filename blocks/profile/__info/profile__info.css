@@ -1,7 +1,5 @@
 .profile__info{
   display: flex;
-  max-width: 336px;
-  flex-wrap: wrap;
   margin: 0 220px 0 30px;
 }
 
@@ -9,12 +7,6 @@
   .profile__info{
     margin-right: 130px;
     margin-left: 20px;
-  }
-}
-
-@media screen and (max-width: 855px){
-  .profile__info{
-    margin-right: 100px;
   }
 }
 
@@ -35,5 +27,6 @@
   .profile__info{
     margin-right: 10px;
     justify-content: center;
+    padding-bottom: 36px;
   }
 }

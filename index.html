@@ -12,18 +12,15 @@
     <hr class="header__line">
   </header>
 
-
   <main class="content">
-    <section class="popup popup_opened">
+    <section class="popup">
       <form class="popup__edit-info">
           <h2 class="popup__heading">Редактировать профиль</h2>
         <fieldset class="popup__input-container">
           <input class="popup__item popup__item_el_name" id="name" name="name" type="text" placeholder="Имя">
-          <input class="popup__item popup__item_el_about" id="about" name="about" type="text" placeholder="О себе">
+          <input class="popup__item popup__item_el_job" id="job" name="job" type="text" placeholder="О себе">
         </fieldset>
-          <button class="popup__btn-save">
-            Сохранить
-          </button>
+          <button class="popup__btn-save">Сохранить</button>
           <button class="popup__btn-close">
             <img class="popup__close-icon" src="./images/close-icon.svg" alt="Иконка закрыть">
           </button>
@@ -33,9 +30,11 @@
     <section class="profile">
       <img class="profile__avatar" src="./images/kusto-photo.jpg" alt="Картинка Кусто">
       <div class="profile__info">
+        <div class="info__container">
         <p class="info__name">Жак-Ив Кусто</p>
-        <button class="info__edit-button"><img class=info__edit-icon src="./images/edit-icon.svg" alt="Иконка ручки"></button>
         <p class="info__job-title">Исследователь океана</p>
+        </div>
+        <button class="info__edit-button"><img class=info__edit-icon src="./images/edit-icon.svg" alt="Иконка ручки"></button>
       </div>
       <button class="profile__add-button"><img class=profile__add-icon src="./images/add-icon.svg" alt="Иконка +"></button>
     </section>
@@ -81,5 +80,6 @@
       <footer class="footer">
         <p class="footer__copyright">&#169; 2020 Mesto Russia</p>
       </footer>
+      <script src="./scripts/script.js"></script>
 </body>
 </html>
