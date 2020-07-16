@@ -12,7 +12,9 @@
 
 @media screen and (max-width: 770px){
   .info__name{
+    width: fit-content;
     margin-top: 14px;
     font-size: 27px;
+  
   }
 }

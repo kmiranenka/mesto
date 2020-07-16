@@ -8,71 +8,71 @@
 </head>
 <body class="page">
   <header class="header">
-    <img class="header__logo" src="./images/logo-mesto.svg" alt="Иконка Mesto">
+    <img class="header__logo" src="./images/logo-mesto.svg" alt="Mesto лого">
     <hr class="header__line">
   </header>
 
   <main class="content">
     <section class="popup">
-      <form class="popup__edit-info">
+      <form class="popup__edit-info" name="edit_form">
           <h2 class="popup__heading">Редактировать профиль</h2>
         <fieldset class="popup__input-container">
           <input class="popup__item popup__item_el_name" id="name" name="name" type="text" placeholder="Имя">
           <input class="popup__item popup__item_el_job" id="job" name="job" type="text" placeholder="О себе">
         </fieldset>
-          <button class="popup__btn-save">Сохранить</button>
-          <button class="popup__btn-close">
-            <img class="popup__close-icon" src="./images/close-icon.svg" alt="Иконка закрыть">
+          <button class="popup__btn-save" type="submit" name="save">Сохранить</button>
+          <button class="popup__btn-close" type="reset" name="close">
+            <img class="popup__close-icon" src="./images/close-icon.svg" alt="Закрыть">
           </button>
           </form>
       </section>
 
     <section class="profile">
-      <img class="profile__avatar" src="./images/kusto-photo.jpg" alt="Картинка Кусто">
+      <img class="profile__avatar" src="./images/kusto-photo.jpg" alt="Жак-Ив Кусто">
       <div class="profile__info">
         <div class="info__container">
-        <p class="info__name">Жак-Ив Кусто</p>
+        <h1 class="info__name">Жак-Ив Кусто</h1>
         <p class="info__job-title">Исследователь океана</p>
         </div>
-        <button class="info__edit-button"><img class=info__edit-icon src="./images/edit-icon.svg" alt="Иконка ручки"></button>
+        <button class="info__edit-button" type="button" name="edit"><img class=info__edit-icon src="./images/edit-icon.svg" alt="Редактировать"></button>
       </div>
-      <button class="profile__add-button"><img class=profile__add-icon src="./images/add-icon.svg" alt="Иконка +"></button>
+      <button class="profile__add-button" type="button" name="add"><img class=profile__add-icon src="./images/add-icon.svg" alt="Добавить"></button>
     </section>
 
       <section class="elements">
         <figure class="element">
-          <img class="elemet__photo" src="./images/arches-national-park.jpg" alt="Картинка поезда">
+          <img class="element__photo" src="./images/arches-national-park.jpg" alt="Парк Арчес">
             <p class="element__name">Национальный парк Арчес</p>
-            <button class="element__like"><img class="element__like-icon" src="./images/like-icon.svg" alt="Иконка Мне нравится"></button>
+            <button class="element__like" type="button"><img class="element__like-icon" src="./images/like-icon.svg" alt="Мне нравится"></button>
         </figure>
         <figure class="element">
-          <img class="elemet__photo" src="./images/rialto-bridge.jpg" alt="Картинка поезда">
+          <img class="element__photo" src="./images/rialto-bridge.jpg" alt="Мост Риалто">
             <p class="element__name">Мост Риалто</p>
-            <button class="element__like"><img class="element__like-icon" src="./images/like-icon.svg" alt="Иконка Мне нравится"></button>
+            <button class="element__like" type="button"><img class="element__like-icon" src="./images/like-icon.svg" alt="Мне нравится"></button>
 
         </figure>
         <figure class="element">
-          <img class="elemet__photo" src="./images/lake-pukaki.jpg" alt="Картинка поезда">
+          <img class="element__photo" src="./images/lake-pukaki.jpg" alt="Озеро Пукаки">
             <p class="element__name">Озеро Пукаки</p>
-            <button class="element__like"><img class="element__like-icon" src="./images/like-icon.svg" alt="Иконка Мне нравится"></button>
+            <button class="element__like" type="button"><img class="element__like-icon" src="./images/like-icon.svg" alt="Мне нравится"></button>
 
         </figure>
         <figure class="element">
-          <img class="elemet__photo" src="./images/mount-fuji.jpg" alt="Картинка поезда">
+          <img class="element__photo" src="./images/mount-fuji.jpg" alt="Гора Фудзияма">
             <p class="element__name">Гора Фудзияма</p>
-            <button class="element__like"><img class="element__like-icon" src="./images/like-icon.svg" alt="Иконка Мне нравится"></button>
+            <button class="element__like" type="button"><img class="element__like-icon" src="./images/like-icon.svg" alt="Мне нравится"></button>
 
         </figure>
         <figure class="element">
-          <img class="elemet__photo" src="./images/statue-of-liberty.jpg" alt="Картинка поезда">
+          <img class="element__photo" src="./images/statue-of-liberty.jpg" alt="Статуя Свободы">
             <p class="element__name">Статуя Свободы</p>
-            <button class="element__like"><img class="element__like-icon" src="./images/like-icon.svg" alt="Иконка Мне нравится"></button>
+            <button class="element__like" type="button"><img class="element__like-icon" src="./images/like-icon.svg" alt="Мне нравится"></button>
 
         </figure>
         <figure class="element">
-          <img class="elemet__photo" src="./images/tour-eiffel.jpg" alt="Картинка поезда">
+          <img class="element__photo" src="./images/tour-eiffel.jpg" alt="Эйфелева Башня">
             <p class="element__name">Эйфелева Башня</p>
-            <button class="element__like"><img class="element__like-icon" src="./images/like-icon.svg" alt="Иконка Мне нравится"></button>
+            <button class="element__like" type="button"><img class="element__like-icon" src="./images/like-icon.svg" alt="Мне нравится"></button>
         </figure>
       </section>
     </main>
