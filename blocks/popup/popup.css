@@ -1,5 +1,9 @@
 @import url(./__edit-info/popup__edit-info.css);
+@import url(./__add-place/popup__add-place.css);
+@import url(./__container/popup__container.css);
 @import url(./__heading/popup__heading.css);
+@import url(./__image/popup__image.css);
+@import url(./__image-heading/popup__image-heading.css);
 @import url(./__input-container/popup__input-container.css);
 @import url(./__item/popup__item.css);
 @import url(./__btn-save/popup__btn-save.css);
@@ -14,7 +18,10 @@
   overflow:hidden;
   position:fixed;
   top:0px;
-  display: none;
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.4s, opacity 0.4s linear;
   z-index: 100;
   align-items: center;
   justify-content: center;

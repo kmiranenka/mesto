@@ -1,4 +1,4 @@
-.popup__edit-info{
+.popup__add-place{
   max-width: 430px;
   height: 330px;
   background: #FFFFFF;
@@ -11,19 +11,19 @@
 }
 
 @media screen and (max-width: 505px){
-  .popup__edit-info{
+  .popup__add-place{
     max-width: 400px;
   }
 }
 
 @media screen and (max-width: 485px){
-  .popup__edit-info{
+  .popup__add-place{
     max-width: 350px;
   }
 }
 
 @media screen and (max-width: 410px){
-  .popup__edit-info{
+  .popup__add-place{
     max-width: 240px;
     height: 258px;
   }
