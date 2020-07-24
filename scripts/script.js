@@ -123,7 +123,7 @@ cards.forEach( item => cardsSection.append(createCardElemnt (item)));
 }
 
 
-window.addEventListener('load', addCardsByDefault(initialCards));
+addCardsByDefault(initialCards);
 editButton.addEventListener('click', openPopup);
 editFormElement.addEventListener('submit', formSubmitHandler);
 editPopupCloseButton.addEventListener('click', closePopup);
