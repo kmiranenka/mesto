@@ -3,8 +3,8 @@
 @import url(../blocks/page/page.css);
 @import url(../blocks/header/header.css);
 @import url(../blocks/popup/popup.css);
-@import url(../blocks/popup/popup_opened.css);
-@import url(../blocks/popup/popup_dark-background.css);
+@import url(../blocks/popup/_opened/popup_opened.css);
+@import url(../blocks/popup/_dark-background/popup_dark-background.css);
 @import url(../blocks/profile/profile.css);
 @import url(../blocks/info/info.css);
 @import url(../blocks/elements/elements.css);
