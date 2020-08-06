@@ -13,7 +13,7 @@ outline: none;
   transition: opacity 0.5s linear;
 }
 
-@media screen and (max-width: 410px){
+@media screen and (max-width: 422px){
   .popup__btn-close{
     right: -42px;
     top: -35px;

@@ -14,11 +14,13 @@
 
   <main class="content">
     <section class="popup">
-      <form class="popup__edit-info" name="edit_form">
+      <form class="popup__form" name="edit_form" novalidate>
           <h2 class="popup__heading">Редактировать профиль</h2>
         <fieldset class="popup__input-container">
-          <input class="popup__item popup__item_el_name" id="name" name="name" type="text" placeholder="Имя">
-          <input class="popup__item popup__item_el_job" id="job" name="job" type="text" placeholder="О себе">
+          <input class="popup__item popup__item_el_name" id="name-input" name="name" type="text" placeholder="Имя" required minlength="2" maxlength="40">
+          <span id="name-input-error" class="popup__item-error"></span>
+          <input class="popup__item popup__item_el_job" id="job-input" name="job" type="text" placeholder="О себе" required minlength="2" maxlength="200">
+          <span id="job-input-error" class="popup__item-error"></span>
         </fieldset>
           <button class="popup__btn-save" type="submit" name="save">Сохранить</button>
           <button class="popup__btn-close" type="reset" name="close">
@@ -40,13 +42,15 @@
     </section>
 
     <section class="popup">
-      <form class="popup__add-place" name="add_form">
+      <form class="popup__form" name="add_form" novalidate>
           <h2 class="popup__heading">Новое место</h2>
         <fieldset class="popup__input-container">
-          <input class="popup__item popup__item_el_title" id="title" name="title" type="text" placeholder="Название">
-          <input class="popup__item popup__item_el_link" id="link" name="link" type="text" placeholder="Ссылка на картинку">
+          <input class="popup__item popup__item_el_title" id="title-input" name="title" type="text" placeholder="Название" required minlength="1" maxlength="30">
+          <span id="title-input-error" class="popup__item-error"></span>
+          <input class="popup__item popup__item_el_link" id="link-input" name="link" type="url" placeholder="Ссылка на картинку" required>
+          <span id="link-input-error" class="popup__item-error"></span>
         </fieldset>
-          <button class="popup__btn-save" type="submit" name="save">Создать</button>
+          <button class="popup__btn-save" type="submit" name="save" disabled>Создать</button>
           <button class="popup__btn-close" type="reset" name="close">
             <img class="popup__close-icon" src="./images/close-icon.svg" alt="Закрыть">
           </button>
@@ -70,6 +74,7 @@
       <footer class="footer">
         <p class="footer__copyright">&#169; 2020 Mesto Russia</p>
       </footer>
+
       <template id="cards">
         <figure class="element">
           <button class="element__trash" type="button"></button>
@@ -78,6 +83,7 @@
             <button class="element__like" type="button"></button>
         </figure>
       </template>
-      <script src="./scripts/script.js"></script>
+      <script src="./scripts/index.js"></script>
+      <script src="./scripts/validate.js"></script>
 </body>
 </html>
