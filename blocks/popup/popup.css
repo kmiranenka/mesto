@@ -12,21 +12,20 @@
 @import url(./__btn-save/btn-save_inactive/popup__btn-save_inactive.css);
 @import url(./__btn-close/popup__btn-close.css);
 @import url(./__close-icon/popup__close-icon.css);
-
-.popup{
-  width:100%;
-  max-width: 1200px;
-  height:100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  overflow:hidden;
-  position:fixed;
-  top:0px;
-  display: flex;
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0.4s, opacity 0.4s linear;
-  z-index: 100;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+.popup {
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    position: fixed;
+    top: 0px;
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.4s, opacity 0.4s linear;
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }

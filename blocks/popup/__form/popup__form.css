@@ -1,4 +1,4 @@
-.popup__form{
+.popup__form {
     max-width: 430px;
     height: 330px;
     background: #FFFFFF;
@@ -9,24 +9,23 @@
     align-items: center;
     position: relative;
     cursor: auto;
-  }
+}
 
-  @media screen and (max-width: 505px){
-    .popup__form{
-      max-width: 400px;
+@media screen and (max-width: 505px) {
+    .popup__form {
+        max-width: 400px;
     }
-  }
+}
 
-  @media screen and (max-width: 485px){
-    .popup__form{
-      max-width: 350px;
+@media screen and (max-width: 485px) {
+    .popup__form {
+        max-width: 350px;
     }
-  }
+}
 
-  @media screen and (max-width: 422px){
-    .popup__form{
-      max-width: 240px;
-      max-height: 290px;
+@media screen and (max-width: 422px) {
+    .popup__form {
+        max-width: 240px;
+        max-height: 290px;
     }
-  }
-
+}

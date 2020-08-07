@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./pages/index.css">
   <title>Mesto</title>
 </head>
+
 <body class="page">
   <header class="header">
     <img class="header__logo" src="./images/logo-mesto.svg" alt="Mesto лого">
@@ -15,75 +17,83 @@
   <main class="content">
     <section class="popup">
       <form class="popup__form" name="edit_form" novalidate>
-          <h2 class="popup__heading">Редактировать профиль</h2>
+        <h2 class="popup__heading">Редактировать профиль</h2>
         <fieldset class="popup__input-container">
-          <input class="popup__item popup__item_el_name" id="name-input" name="name" type="text" placeholder="Имя" required minlength="2" maxlength="40">
+          <input class="popup__item popup__item_el_name" id="name-input" name="name" type="text" placeholder="Имя"
+            required minlength="2" maxlength="40">
           <span id="name-input-error" class="popup__item-error"></span>
-          <input class="popup__item popup__item_el_job" id="job-input" name="job" type="text" placeholder="О себе" required minlength="2" maxlength="200">
+          <input class="popup__item popup__item_el_job" id="job-input" name="job" type="text" placeholder="О себе"
+            required minlength="2" maxlength="200">
           <span id="job-input-error" class="popup__item-error"></span>
         </fieldset>
-          <button class="popup__btn-save" type="submit" name="save">Сохранить</button>
-          <button class="popup__btn-close" type="reset" name="close">
-            <img class="popup__close-icon" src="./images/close-icon.svg" alt="Закрыть">
-          </button>
-          </form>
-      </section>
+        <button class="popup__btn-save" type="submit" name="save">Сохранить</button>
+        <button class="popup__btn-close" type="reset" name="close">
+          <img class="popup__close-icon" src="./images/close-icon.svg" alt="Закрыть">
+        </button>
+      </form>
+    </section>
 
     <section class="profile">
       <img class="profile__avatar" src="./images/kusto-photo.jpg" alt="Жак-Ив Кусто">
-      <div class="profile__info">
+      <div class="profile__info info">
         <div class="info__container">
-        <h1 class="info__name">Жак-Ив Кусто</h1>
-        <p class="info__job-title">Исследователь океана</p>
+          <h1 class="info__name">Жак-Ив Кусто</h1>
+          <p class="info__job-title">Исследователь океана</p>
         </div>
-        <button class="info__edit-button" type="button" name="edit"><img class="info__edit-icon" src="./images/edit-icon.svg" alt="Редактировать"></button>
+        <button class="info__edit-button" type="button" name="edit"><img class="info__edit-icon"
+            src="./images/edit-icon.svg" alt="Редактировать"></button>
       </div>
-      <button class="profile__add-button" type="button" name="add"><img class="profile__add-icon" src="./images/add-icon.svg" alt="Добавить"></button>
+      <button class="profile__add-button" type="button" name="add"><img class="profile__add-icon"
+          src="./images/add-icon.svg" alt="Добавить"></button>
     </section>
 
     <section class="popup">
       <form class="popup__form" name="add_form" novalidate>
-          <h2 class="popup__heading">Новое место</h2>
+        <h2 class="popup__heading">Новое место</h2>
         <fieldset class="popup__input-container">
-          <input class="popup__item popup__item_el_title" id="title-input" name="title" type="text" placeholder="Название" required minlength="1" maxlength="30">
+          <input class="popup__item popup__item_el_title" id="title-input" name="title" type="text"
+            placeholder="Название" required minlength="1" maxlength="30">
           <span id="title-input-error" class="popup__item-error"></span>
-          <input class="popup__item popup__item_el_link" id="link-input" name="link" type="url" placeholder="Ссылка на картинку" required>
+          <input class="popup__item popup__item_el_link" id="link-input" name="link" type="url"
+            placeholder="Ссылка на картинку" required>
           <span id="link-input-error" class="popup__item-error"></span>
         </fieldset>
-          <button class="popup__btn-save" type="submit" name="save" disabled>Создать</button>
-          <button class="popup__btn-close" type="reset" name="close">
-            <img class="popup__close-icon" src="./images/close-icon.svg" alt="Закрыть">
-          </button>
-          </form>
-      </section>
+        <button class="popup__btn-save" type="submit" name="save" disabled>Создать</button>
+        <button class="popup__btn-close" type="reset" name="close">
+          <img class="popup__close-icon" src="./images/close-icon.svg" alt="Закрыть">
+        </button>
+      </form>
+    </section>
 
-      <section class="popup popup_dark-background">
-        <div class="popup__container">
+    <section class="popup popup_dark-background">
+      <div class="popup__container">
         <img class="popup__image" src="#" alt="">
         <h2 class="popup__image-heading"></h2>
-         <button class="popup__btn-close" type="reset" name="close">
+        <button class="popup__btn-close" type="reset" name="close">
           <img class="popup__close-icon" src="./images/close-icon.svg" alt="Закрыть">
         </button>
       </div>
-      </section>
+    </section>
 
-      <section class="elements">
-      </section>
-    </main>
+    <section class="elements">
+    </section>
+  </main>
 
-      <footer class="footer">
-        <p class="footer__copyright">&#169; 2020 Mesto Russia</p>
-      </footer>
+  <footer class="footer">
+    <p class="footer__copyright">&#169; 2020 Mesto Russia</p>
+  </footer>
 
-      <template id="cards">
-        <figure class="element">
-          <button class="element__trash" type="button"></button>
-          <img class="element__photo" src="#" alt="">
-            <p class="element__name"></p>
-            <button class="element__like" type="button"></button>
-        </figure>
-      </template>
-      <script src="./scripts/index.js"></script>
-      <script src="./scripts/validate.js"></script>
+  <template id="cards">
+    <figure class="element">
+      <button class="element__trash" type="button"></button>
+      <img class="element__photo" src="#" alt="">
+      <p class="element__name"></p>
+      <button class="element__like" type="button"></button>
+    </figure>
+  </template>
+  <script src="./scripts/initial-cards.js"></script>
+  <script src="./scripts/index.js"></script>
+  <script src="./scripts/validate.js"></script>
 </body>
+
 </html>

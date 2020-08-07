@@ -20,37 +20,37 @@ const checkInputValidity = (formElement, inputElement, inputErrorClass, errorCla
   }
 };
 
-function hasInvalidInput(inputList){
+function hasInvalidInput(inputList) {
   return inputList.some((inputElement) => {
-   return !inputElement.validity.valid;
- });
+    return !inputElement.validity.valid;
+  });
 }
 
-const toggleButtonState = (inputList, buttonElement,  inactiveButtonClass) => {
-  if(hasInvalidInput(inputList)){
+const toggleButtonState = (inputList, buttonElement, inactiveButtonClass) => {
+  if (hasInvalidInput(inputList)) {
     buttonElement.classList.add(inactiveButtonClass);
     buttonElement.disabled = true;
   } else {
-        buttonElement.classList.remove(inactiveButtonClass);
-        buttonElement.disabled = false;
+    buttonElement.classList.remove(inactiveButtonClass);
+    buttonElement.disabled = false;
   }
 };
 
-function resertErrorMessage (formElement, inputSelector, inputErrorClass, errorClass){
+function resertErrorMessage(formElement, inputSelector, inputErrorClass, errorClass) {
   const inputList = Array.from(formElement.querySelectorAll(inputSelector));
 
   inputList.forEach((inputElement) => {
-    if(inputElement.classList.contains(inputErrorClass)){
+    if (inputElement.classList.contains(inputErrorClass)) {
       hideInputError(formElement, inputElement, inputErrorClass, errorClass);
     }
   })
 }
 
 const setEventListeners = (formElement, inputSelector, submitButtonSelector, inactiveButtonClass,
-   inputErrorClass, errorClass, resetButtonSelector, popupSelector) => {
+  inputErrorClass, errorClass, resetButtonSelector, popupSelector) => {
   const inputList = Array.from(formElement.querySelectorAll(inputSelector));
   const buttonElement = formElement.querySelector(submitButtonSelector);
-  const closebuttonElement = formElement.querySelector(resetButtonSelector);
+  const closeButtonElement = formElement.querySelector(resetButtonSelector);
   const popupOverlayList = Array.from(document.querySelectorAll(popupSelector));
 
 
@@ -63,25 +63,25 @@ const setEventListeners = (formElement, inputSelector, submitButtonSelector, ina
     });
   });
 
-  closebuttonElement.addEventListener('click', (evt) => {
-      resertErrorMessage(formElement, inputSelector, inputErrorClass, errorClass);
-      toggleButtonState(inputList, buttonElement, inactiveButtonClass);
-    });
+  closeButtonElement.addEventListener('click', function () {
+    resertErrorMessage(formElement, inputSelector, inputErrorClass, errorClass);
+    toggleButtonState(inputList, buttonElement, inactiveButtonClass);
+  });
 
-  popupOverlayList.forEach((overlay) => overlay.addEventListener('click', function (evt){
-    if(evt.target.classList.contains('popup')){
+  popupOverlayList.forEach((overlay) => overlay.addEventListener('click', function (evt) {
+    if (evt.target.classList.contains('popup')) {
       resertErrorMessage(formElement, inputSelector, inputErrorClass, errorClass);
       toggleButtonState(inputList, buttonElement, inactiveButtonClass);
     }
   })
   );
 
-  document.addEventListener('keydown', function (evt){
-        if(evt.key === 'Escape'){
-          resertErrorMessage(formElement, inputSelector, inputErrorClass, errorClass);
-          toggleButtonState(inputList, buttonElement, inactiveButtonClass);
-        }
-      })
+  document.addEventListener('keydown', function (evt) {
+    if (evt.key === 'Escape') {
+      resertErrorMessage(formElement, inputSelector, inputErrorClass, errorClass);
+      toggleButtonState(inputList, buttonElement, inactiveButtonClass);
+    }
+  })
 };
 
 const enableValidation = (formsList) => {
@@ -89,11 +89,14 @@ const enableValidation = (formsList) => {
 
   formList.forEach((formElement) => {
     formElement.addEventListener('submit', (evt) => {
+      const inputList = Array.from(formElement.querySelectorAll(formsList.inputSelector));
+      const buttonElement = formElement.querySelector(formsList.submitButtonSelector);
       evt.preventDefault();
+      toggleButtonState(inputList, buttonElement, formsList.inactiveButtonClass);
     });
 
-  setEventListeners(formElement, formsList.inputSelector, formsList.submitButtonSelector, formsList.inactiveButtonClass,
-    formsList.inputErrorClass, formsList.errorClass, formsList.resetButtonSelector, formsList.popupSelector);
+    setEventListeners(formElement, formsList.inputSelector, formsList.submitButtonSelector, formsList.inactiveButtonClass,
+      formsList.inputErrorClass, formsList.errorClass, formsList.resetButtonSelector, formsList.popupSelector);
   });
 };
 
