@@ -16,19 +16,21 @@
 
     <main class="content">
         <section class="popup">
-            <form class="popup__form" name="edit_form" novalidate>
-                <h2 class="popup__heading">Редактировать профиль</h2>
-                <fieldset class="popup__input-container">
-                    <input class="popup__item popup__item_el_name" id="name-input" name="name" type="text" placeholder="Имя" required minlength="2" maxlength="40">
-                    <span id="name-input-error" class="popup__item-error"></span>
-                    <input class="popup__item popup__item_el_job" id="job-input" name="job" type="text" placeholder="О себе" required minlength="2" maxlength="200">
-                    <span id="job-input-error" class="popup__item-error"></span>
-                </fieldset>
-                <button class="popup__btn-save" type="submit" name="save">Сохранить</button>
+            <div class="popup__form-container">
+                <form class="popup__form" name="edit_form" novalidate>
+                    <h2 class="popup__heading">Редактировать профиль</h2>
+                    <fieldset class="popup__input-container">
+                        <input class="popup__item popup__item_el_name" id="name-input" name="name" type="text" placeholder="Имя" required minlength="2" maxlength="40">
+                        <span id="name-input-error" class="popup__item-error"></span>
+                        <input class="popup__item popup__item_el_job" id="job-input" name="job" type="text" placeholder="О себе" required minlength="2" maxlength="200">
+                        <span id="job-input-error" class="popup__item-error"></span>
+                    </fieldset>
+                    <button class="popup__btn-save" type="submit" name="save">Сохранить</button>
+                </form>
                 <button class="popup__btn-close" type="reset" name="close">
-          <img class="popup__close-icon" src="./images/close-icon.svg" alt="Закрыть">
-        </button>
-            </form>
+                <img class="popup__close-icon" src="./images/close-icon.svg" alt="Закрыть">
+                </button>
+            </div>
         </section>
 
         <section class="profile">
@@ -46,19 +48,21 @@
         </section>
 
         <section class="popup">
-            <form class="popup__form" name="add_form" novalidate>
-                <h2 class="popup__heading">Новое место</h2>
-                <fieldset class="popup__input-container">
-                    <input class="popup__item popup__item_el_title" id="title-input" name="title" type="text" placeholder="Название" required minlength="1" maxlength="30">
-                    <span id="title-input-error" class="popup__item-error"></span>
-                    <input class="popup__item popup__item_el_link" id="link-input" name="link" type="url" placeholder="Ссылка на картинку" required>
-                    <span id="link-input-error" class="popup__item-error"></span>
-                </fieldset>
-                <button class="popup__btn-save" type="submit" name="save" disabled>Создать</button>
+            <div class="popup__form-container">
+                <form class="popup__form" name="add_form" novalidate>
+                    <h2 class="popup__heading">Новое место</h2>
+                    <fieldset class="popup__input-container">
+                        <input class="popup__item popup__item_el_title" id="title-input" name="title" type="text" placeholder="Название" required minlength="1" maxlength="30">
+                        <span id="title-input-error" class="popup__item-error"></span>
+                        <input class="popup__item popup__item_el_link" id="link-input" name="link" type="url" placeholder="Ссылка на картинку" required>
+                        <span id="link-input-error" class="popup__item-error"></span>
+                    </fieldset>
+                    <button class="popup__btn-save" type="submit" name="save" disabled>Создать</button>
+                </form>
                 <button class="popup__btn-close" type="reset" name="close">
-          <img class="popup__close-icon" src="./images/close-icon.svg" alt="Закрыть">
-        </button>
-            </form>
+                <img class="popup__close-icon" src="./images/close-icon.svg" alt="Закрыть">
+                </button>
+            </div>
         </section>
 
         <section class="popup popup_dark-background">
@@ -87,7 +91,6 @@
       <button class="element__like" type="button"></button>
     </figure>
   </template>
-    <script type="module" src="./scripts/initial-cards.js"></script>
     <script type="module" src="./scripts/index.js"></script>
 </body>
 

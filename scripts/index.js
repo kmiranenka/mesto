@@ -1,7 +1,5 @@
 import Card from './components/Card.js';
 import FormValidator from './components/FormValidator.js';
-
-
 import {
     initialCards
 } from './initial-cards.js';
@@ -17,17 +15,17 @@ export const headingInPopup = imagePopup.querySelector('.popup__image-heading');
 
 const editButton = content.querySelector('.info__edit-button');
 const editFormElement = document.forms.edit_form;
-const editPopup = document.forms.edit_form.parentElement;
+const editPopup = document.forms.edit_form.parentElement.parentElement;
 const nameInput = editFormElement.elements.name;
 const jobInput = editFormElement.elements.job;
-const editPopupCloseButton = editFormElement.elements.close;
+const editPopupCloseButton = editPopup.querySelector('.popup__btn-close');
 
 const addButton = content.querySelector('.profile__add-button');
 const addFormElement = document.forms.add_form;
-const addPopup = addFormElement.parentElement;
+const addPopup = addFormElement.parentElement.parentElement;
 const titleInput = addFormElement.elements.title;
 const linkInput = addFormElement.elements.link;
-const addPopupCloseButton = addFormElement.elements.close;
+const addPopupCloseButton = addPopup.querySelector('.popup__btn-close');
 
 const form = {
     inputSelector: '.popup__item',
@@ -66,6 +64,7 @@ function closeProfileEditPopup(evt) {
 
 function closeCardAddPopup() {
     togglePopup(addPopup);
+    resetFormValues([titleInput, linkInput]);
 }
 
 function closeImagePopup() {

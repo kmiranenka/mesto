@@ -13,10 +13,6 @@
     transition: opacity 0.5s linear;
 }
 
-.profile__add-button:focus {
-    border: none;
-}
-
 @media screen and (max-width: 908px) {
     .profile__add-button {
         margin-left: auto;

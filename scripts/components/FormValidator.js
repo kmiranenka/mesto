@@ -111,7 +111,7 @@ export default class FormValidator {
             });
         });
 
-        formElement.querySelector(this._resetButtonSelector).addEventListener('click', function(evt) {
+        formElement.parentElement.querySelector(this._resetButtonSelector).addEventListener('click', function(evt) {
             form._resertErrorMessage(formElement, inputSelector, inputErrorClass, errorClass);
         });
 
