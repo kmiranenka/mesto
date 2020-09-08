@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./pages/index.css">
     <title>Mesto</title>
 </head>
 
@@ -15,7 +14,7 @@
     </header>
 
     <main class="content">
-        <section class="popup">
+        <section class="popup popup_edit">
             <div class="popup__form-container">
                 <form class="popup__form" name="edit_form" novalidate>
                     <h2 class="popup__heading">Редактировать профиль</h2>
@@ -47,12 +46,12 @@
           src="./images/add-icon.svg" alt="Добавить"></button>
         </section>
 
-        <section class="popup">
-            <div class="popup__form-container">
+        <section class="popup popup_add">
+            <div class=" popup__form-container ">
                 <form class="popup__form" name="add_form" novalidate>
-                    <h2 class="popup__heading">Новое место</h2>
+                    <h2 class="popup__heading ">Новое место</h2>
                     <fieldset class="popup__input-container">
-                        <input class="popup__item popup__item_el_title" id="title-input" name="title" type="text" placeholder="Название" required minlength="1" maxlength="30">
+                        <input class="popup__item popup__item_el_title" id="title-input" name="title" type="text" placeholder="Название" required minlength="1 " maxlength="30 ">
                         <span id="title-input-error" class="popup__item-error"></span>
                         <input class="popup__item popup__item_el_link" id="link-input" name="link" type="url" placeholder="Ссылка на картинку" required>
                         <span id="link-input-error" class="popup__item-error"></span>
@@ -60,16 +59,16 @@
                     <button class="popup__btn-save" type="submit" name="save" disabled>Создать</button>
                 </form>
                 <button class="popup__btn-close" type="reset" name="close">
-                <img class="popup__close-icon" src="./images/close-icon.svg" alt="Закрыть">
+                <img class="popup__close-icon" src="./images/close-icon.svg " alt="Закрыть">
                 </button>
             </div>
         </section>
 
-        <section class="popup popup_dark-background">
-            <div class="popup__container">
-                <img class="popup__image" src="#" alt="">
+        <section class="popup popup_image popup_dark-background">
+            <div class="popup__image-container">
+                <img class="popup__image" src="#" alt=" ">
                 <h2 class="popup__image-heading"></h2>
-                <button class="popup__btn-close" type="reset" name="close">
+                <button class="popup__btn-close" type="reset " name="close">
           <img class="popup__close-icon" src="./images/close-icon.svg" alt="Закрыть">
         </button>
             </div>
@@ -86,12 +85,11 @@
     <template id="cards">
     <figure class="element">
       <button class="element__trash" type="button"></button>
-      <img class="element__photo" src="#" alt="">
+      <img class="element__photo" src="#" alt=" ">
       <p class="element__name"></p>
       <button class="element__like" type="button"></button>
     </figure>
   </template>
-    <script type="module" src="./scripts/index.js"></script>
 </body>
 
 </html>

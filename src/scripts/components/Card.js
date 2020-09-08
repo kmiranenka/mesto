@@ -1,10 +1,9 @@
-import { imagePopup, imageInPopup, headingInPopup, setCloseByEscapeListner } from '../index.js';
-
 export default class Card {
-    constructor(link, name, templateSelector) {
+    constructor(link, name, templateSelector, handleCardClick) {
         this._link = link;
         this._name = name;
         this._templateSelector = templateSelector;
+        this._handleCardClick = handleCardClick;
     }
 
     _getTemplate() {
@@ -50,10 +49,6 @@ export default class Card {
     }
 
     _openCardPopup() {
-        imageInPopup.src = this._link;
-        imageInPopup.alt = this._name;
-        headingInPopup.textContent = this._name;
-        imagePopup.classList.add('popup_opened');
-        setCloseByEscapeListner();
+        this._handleCardClick();
     }
 }
