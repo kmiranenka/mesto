@@ -5,16 +5,15 @@ export default class Section {
         renderer
     }, containerSelector) {
         this._initialArray = items;
-        this._renderer = renderer; // renderer — это функция
-
+        this._renderer = renderer;
         this._container = document.querySelector(containerSelector);
     }
 
     renderItems() {
-        this._renderedItems.forEach(item => this._renderer(item));
+        this._initialArray.forEach(item => this._renderer(item));
     }
 
     addItem(element) {
-        this._container.append(element);
+        this._container.prepend(element);
     }
 }

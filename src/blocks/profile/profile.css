@@ -7,7 +7,7 @@
     padding: 0 0 50px;
     margin: 0 auto;
     max-width: 882px;
-    min-width: 282px;
+    min-width: 285px;
     flex-wrap: wrap;
     justify-content: space-between;
 }
@@ -22,7 +22,7 @@
     .profile {
         flex-direction: column;
         padding: 0 19px 36px;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: center;
     }
 }

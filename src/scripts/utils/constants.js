@@ -52,4 +52,4 @@ export const form = {
     editFormSelector: '.info__edit-button'
 };
 
-export const cardsSection = content.querySelector('.elements');
+export const cardSection = '.elements';

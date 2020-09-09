@@ -9,11 +9,12 @@ import {
     jobInput,
     userInfoSelector,
     form,
-    cardsSection
+    cardSection
 } from '../scripts/utils/constants.js';
 import PopupWithImage from '../scripts/components/PopupWithImage.js';
 import PopupWithForm from '../scripts/components/PopupWithForm.js';
 import UserInfo from '../scripts/components/UserInfo.js';
+import Section from '../scripts/components/Section.js';
 
 function createCardElement(link, name) {
     const card = new Card(link, name, '#cards', () => {
@@ -25,12 +26,19 @@ function createCardElement(link, name) {
     return card.generateCard();
 }
 
-initialCards.forEach((item) => {
-    cardsSection.append(createCardElement(item.link, item.name));
-})
+const cardsSection = new Section({
+    items: initialCards,
+    renderer: (item) => {
+        const card = createCardElement(item.link, item.name);
+        cardsSection.addItem(card);
+    }
+}, cardSection);
+
+cardsSection.renderItems();
 
 const popupWithAddForm = new PopupWithForm('.popup_add', (formValues) => {
-    cardsSection.prepend(createCardElement(formValues.link, formValues.title));
+    const cardsSection = new Section({}, cardSection);
+    cardsSection.addItem(createCardElement(formValues.link, formValues.title));
 });
 
 popupWithAddForm.setEventListeners();
