@@ -37,7 +37,6 @@ const cardsSection = new Section({
 cardsSection.renderItems();
 
 const popupWithAddForm = new PopupWithForm('.popup_add', (formValues) => {
-    const cardsSection = new Section({}, cardSection);
     cardsSection.addItem(createCardElement(formValues.link, formValues.title));
 });
 
