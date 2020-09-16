@@ -1,7 +1,11 @@
+@import url(./__trash/_hidden/element__trash_hidden.css);
 @import url(./__trash/element__trash.css);
 @import url(./__photo/element__photo.css);
 @import url(./__name/element__name.css);
+@import url(./__likes-container/element__likes-container.css);
 @import url(./__like/element__like.css);
+@import url(./__likes-number/element__likes-number.css);
+@import url(./__likes-number/_add/element__likes-number_add.css);
 .element {
     margin: 0;
     border-radius: 10px;

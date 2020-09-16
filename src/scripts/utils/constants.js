@@ -1,33 +1,19 @@
-export const initialCards = [{
-        name: 'Австралия',
-        link: 'https://images.unsplash.com/photo-1494233892892-84542a694e72?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=401&q=80'
+export const apiConfig = {
+    url: {
+        userInfo: 'https://mesto.nomoreparties.co/v1/cohort-15/users/me',
+        cards: 'https://mesto.nomoreparties.co/v1/cohort-15/cards'
     },
-    {
-        name: 'Бруклин',
-        link: 'https://images.unsplash.com/photo-1594744754648-7836af69e1c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=375&q=80'
-    },
-    {
-        name: 'Триумфальная Арка',
-        link: 'https://images.unsplash.com/photo-1509439581779-6298f75bf6e5?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80'
-    },
-    {
-        name: 'Токио',
-        link: 'https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'
-    },
-    {
-        name: 'Италия',
-        link: 'https://images.unsplash.com/photo-1518098268026-4e89f1a2cd8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=968&q=80'
-    },
-    {
-        name: 'Новая Зеландия',
-        link: 'https://images.unsplash.com/photo-1577786410921-6c2d73de9d92?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'
+    headers: {
+        token: 'd8f573f5-3d39-4e5c-8f4c-7d486a1ab9c2'
     }
-];
+}
 
 const content = document.querySelector('.content');
 
 export const editButton = content.querySelector('.info__edit-button');
 export const addButton = content.querySelector('.profile__add-button');
+export const avatar = content.querySelector('.profile__add-button');
+
 
 const editFormElement = document.forms.edit_form;
 export const nameInput = editFormElement.elements.name;
@@ -36,7 +22,9 @@ export const jobInput = editFormElement.elements.job;
 
 export const userInfoSelector = {
     nameInfoSelector: '.info__name',
-    jobInfoSelector: '.info__job-title'
+    jobInfoSelector: '.info__job-title',
+    avatarInfoSelector: '.profile__avatar'
+
 }
 
 export const form = {

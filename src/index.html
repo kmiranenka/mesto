@@ -33,11 +33,11 @@
         </section>
 
         <section class="profile">
-            <img class="profile__avatar" src="./images/kusto-photo.jpg" alt="Жак-Ив Кусто">
+            <img class="profile__avatar" src="#" alt="Аватарка">
             <div class="profile__info info">
                 <div class="info__container">
-                    <h1 class="info__name">Жак-Ив Кусто</h1>
-                    <p class="info__job-title">Исследователь океана</p>
+                    <h1 class="info__name"></h1>
+                    <p class="info__job-title"></p>
                 </div>
                 <button class="info__edit-button" type="button" name="edit"><img class="info__edit-icon"
             src="./images/edit-icon.svg" alt="Редактировать"></button>
@@ -64,6 +64,17 @@
             </div>
         </section>
 
+        <section class="popup popup_confirm">
+            <form class=" popup__confirm-container">
+                <h2 class="popup__heading">Вы уверены?</h2>
+                <button class="popup__btn-save" type="submit" name="agree">Да</button>
+                <button class="popup__btn-close" type="reset" name="close">
+                  <img class="popup__close-icon" src="./images/close-icon.svg " alt="Закрыть">
+                  </button>
+            </form>
+
+        </section>
+
         <section class="popup popup_image popup_dark-background">
             <div class="popup__image-container">
                 <img class="popup__image" src="#" alt=" ">
@@ -73,6 +84,8 @@
         </button>
             </div>
         </section>
+
+
 
         <section class="elements">
         </section>
@@ -84,10 +97,13 @@
 
     <template id="cards">
     <li class="element">
-      <button class="element__trash" type="button"></button>
+      <button class="element__trash element__trash_hidden" type="button"></button>
       <img class="element__photo" src="#" alt=" ">
       <p class="element__name"></p>
+      <div class="element__likes-container">
       <button class="element__like" type="button"></button>
+      <p class="element__likes-number"></p>
+    </div>
     </li>
   </template>
 </body>

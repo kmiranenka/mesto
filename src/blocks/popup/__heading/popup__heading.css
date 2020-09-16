@@ -6,7 +6,7 @@
     line-height: 29px;
     text-align: start;
     min-width: 358px;
-    margin: 34px 0 54px;
+    margin: 34px 0 20px;
 }
 
 @media screen and (max-width: 485px) {
@@ -20,7 +20,6 @@
         min-width: 50px;
         font-size: 18px;
         line-height: 22px;
-        margin-bottom: 30px;
         margin-left: 20px;
         margin-top: 30px;
         align-self: start;
