@@ -32,8 +32,27 @@
             </div>
         </section>
 
+        <section class="popup popup_edit-avatar">
+            <div class="popup__form-container">
+                <form class="popup__form popup__form_edit" name="avatar_form" novalidate>
+                    <h2 class="popup__heading">Обновить аватар</h2>
+                    <fieldset class="popup__input-container">
+                        <input class="popup__item popup__item_el_link" id="avatar-input" name="avatar_link" type="url" placeholder="Ссылка на картинку" required>
+                        <span id="avatar-input-error" class="popup__item-error"></span>
+                    </fieldset>
+                    <button class="popup__btn-save" type="submit" name="save">Сохранить</button>
+                </form>
+                <button class="popup__btn-close" type="reset" name="close">
+              <img class="popup__close-icon" src="./images/close-icon.svg" alt="Закрыть">
+              </button>
+            </div>
+        </section>
+
         <section class="profile">
-            <img class="profile__avatar" src="#" alt="Аватарка">
+            <div class="profile__avatar-container">
+                <button class="profile__edit-avatar-button" type="button" name="avatar"><img class="profile__add-icon" src="./images/edit-avatar-icon.svg" alt="Редактировать аватар"></button>
+                <img class="profile__avatar" src="#" alt="Аватарка">
+            </div>
             <div class="profile__info info">
                 <div class="info__container">
                     <h1 class="info__name"></h1>

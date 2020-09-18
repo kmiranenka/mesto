@@ -1,24 +1,20 @@
 export const apiConfig = {
-    url: {
-        userInfo: 'https://mesto.nomoreparties.co/v1/cohort-15/users/me',
-        cards: 'https://mesto.nomoreparties.co/v1/cohort-15/cards'
-    },
+    url: 'https://mesto.nomoreparties.co/v1/cohort-15',
     headers: {
-        token: 'd8f573f5-3d39-4e5c-8f4c-7d486a1ab9c2'
+        authorization: 'd8f573f5-3d39-4e5c-8f4c-7d486a1ab9c2',
+        contentType: 'application/json'
     }
 }
 
 const content = document.querySelector('.content');
 
+export const avatarEditButton = content.querySelector('.profile__edit-avatar-button');
 export const editButton = content.querySelector('.info__edit-button');
 export const addButton = content.querySelector('.profile__add-button');
-export const avatar = content.querySelector('.profile__add-button');
-
 
 const editFormElement = document.forms.edit_form;
 export const nameInput = editFormElement.elements.name;
 export const jobInput = editFormElement.elements.job;
-
 
 export const userInfoSelector = {
     nameInfoSelector: '.info__name',
@@ -37,7 +33,8 @@ export const form = {
     popupSelector: '.popup',
     contentSelector: '.content',
     addFormSelector: '.profile__add-button',
-    editFormSelector: '.info__edit-button'
+    editFormSelector: '.info__edit-button',
+    avatarFormSelector: '.profile__edit-avatar-button'
 };
 
 export const cardSection = '.elements';

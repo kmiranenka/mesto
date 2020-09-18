@@ -11,6 +11,8 @@
 * Формы
 * Валидация формы
 * JavaScript
+* WebPack сборка
+* REST API
 * DOM
 * Grid Layout
 * Flexbox-верстка

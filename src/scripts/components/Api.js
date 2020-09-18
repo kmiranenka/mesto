@@ -5,16 +5,16 @@ export default class Api {
     }
 
     getUserInfo() {
-        return fetch(this._url.userInfo, {
+        return fetch(this._url + '/users/me', {
                 headers: {
-                    authorization: this._headers.token
+                    authorization: this._headers.authorization,
                 }
             })
             .then((res) => {
                 if (res.ok) {
                     return res.json();
                 } else {
-                    return Promise.reject(res.status);
+                    return Promise.reject(`Ошибка: ${res.status}`);
                 }
             })
             .catch((err) => {
@@ -23,16 +23,16 @@ export default class Api {
     }
 
     getCards() {
-        return fetch(this._url.cards, {
+        return fetch(this._url + '/cards', {
                 headers: {
-                    authorization: this._headers.token
+                    authorization: this._headers.authorization,
                 }
             })
             .then((res) => {
                 if (res.ok) {
                     return res.json();
                 } else {
-                    return Promise.reject(res.status);
+                    return Promise.reject(`Ошибка: ${res.status}`);
                 }
             })
             .catch((err) => {
@@ -41,11 +41,11 @@ export default class Api {
     }
 
     updateUserInfo(nameInfo, jobInfo) {
-        return fetch(this._url.userInfo, {
+        return fetch(this._url + '/users/me', {
                 method: 'PATCH',
                 headers: {
-                    authorization: this._headers.token,
-                    'Content-Type': 'application/json'
+                    authorization: this._headers.authorization,
+                    'Content-Type': this._headers.contentType
                 },
                 body: JSON.stringify({
                     name: nameInfo,
@@ -56,7 +56,7 @@ export default class Api {
                 if (res.ok) {
                     return res.json();
                 } else {
-                    return Promise.reject(res.status);
+                    return Promise.reject(`Ошибка: ${res.status}`);
                 }
             })
             .catch((err) => {
@@ -65,23 +65,22 @@ export default class Api {
     }
 
     addCard(cardName, cardLink) {
-        return fetch(this._url.cards, {
+        return fetch(this._url + '/cards', {
                 method: 'POST',
                 headers: {
-                    authorization: this._headers.token,
-                    'Content-Type': 'application/json'
+                    authorization: this._headers.authorization,
+                    'Content-Type': this._headers.contentType
                 },
                 body: JSON.stringify({
                     name: cardName,
                     link: cardLink
                 })
-
             })
             .then((res) => {
                 if (res.ok) {
                     return res.json();
                 } else {
-                    return Promise.reject(res.status);
+                    return Promise.reject(`Ошибка: ${res.status}`);
                 }
             })
             .catch((err) => {
@@ -90,23 +89,83 @@ export default class Api {
     }
 
     deleteCard(cardId) {
-        return fetch(this._url.cards + '/' + cardId, {
+        return fetch(this._url + '/cards/' + cardId, {
                 method: 'DELETE',
                 headers: {
-                    authorization: this._headers.token,
+                    authorization: this._headers.authorization,
                 }
             })
             .then((res) => {
                 if (res.ok) {
                     return res.json();
                 } else {
-                    return Promise.reject(res.status);
+                    return Promise.reject(`Ошибка: ${res.status}`);
                 }
             })
             .catch((err) => {
-                alert(`
-                    Ошибка: $ { err }
-                    `);
+                alert(`Ошибка: ${err}`);
             })
     }
+
+    changeLikeCardStatus(cardId, isLiked) {
+        if (!isLiked) {
+            return fetch(this._url + '/cards/likes/' + cardId, {
+                    method: 'PUT',
+                    headers: {
+                        authorization: this._headers.authorization,
+                    }
+                })
+                .then((res) => {
+                    if (res.ok) {
+                        return res.json();
+                    } else {
+                        return Promise.reject(`Ошибка: ${res.status}`);
+                    }
+                })
+                .catch((err) => {
+                    alert(`Ошибка: ${err}`);
+                })
+        } else {
+            return fetch(this._url + '/cards/likes/' + cardId, {
+                    method: 'DELETE',
+                    headers: {
+                        authorization: this._headers.authorization,
+                    }
+                })
+                .then((res) => {
+                    if (res.ok) {
+                        return res.json();
+                    } else {
+                        return Promise.reject(`Ошибка: ${res.status}`);
+                    }
+                })
+                .catch((err) => {
+                    alert(`Ошибка: ${err}`);
+                })
+        }
+    }
+
+    updateUserAvatar(imageLink) {
+        return fetch(this._url + '/users/me/avatar', {
+                method: 'PATCH',
+                headers: {
+                    authorization: this._headers.authorization,
+                    'Content-Type': this._headers.contentType
+                },
+                body: JSON.stringify({
+                    avatar: imageLink
+                })
+            })
+            .then((res) => {
+                if (res.ok) {
+                    return res.json();
+                } else {
+                    return Promise.reject(`Ошибка: ${res.status}`);
+                }
+            })
+            .catch((err) => {
+                alert(`Ошибка: ${err}`);
+            })
+    }
+
 }

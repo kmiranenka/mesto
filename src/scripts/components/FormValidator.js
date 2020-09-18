@@ -9,7 +9,8 @@ export default class FormValidator {
             resetButtonSelector,
             popupSelector,
             addFormSelector,
-            editFormSelector
+            editFormSelector,
+            avatarFormSelector
         },
         formSelector) {
         this._formSelector = formSelector;
@@ -22,6 +23,7 @@ export default class FormValidator {
         this._popupSelector = popupSelector;
         this._addFormSelector = addFormSelector;
         this._editFormSelector = editFormSelector;
+        this._avatarFormSelector = avatarFormSelector;
     }
 
     enableValidation() {
@@ -101,6 +103,10 @@ export default class FormValidator {
         });
 
         document.querySelector(this._editFormSelector).addEventListener('click', function() {
+            form._toggleButtonState(inputList, buttonElement, inactiveButtonClass);
+        });
+
+        document.querySelector(this._avatarFormSelector).addEventListener('click', function() {
             form._toggleButtonState(inputList, buttonElement, inactiveButtonClass);
         });
 
