@@ -41,20 +41,24 @@ function createCardElement(link, name, likesList, userId, userCardId, cardId) {
             popupWithFormSubmit.setEventListeners();
         },
         () => {
+            console.log(likesList);
+
             api.changeLikeCardStatus(cardId, card.isLiked())
                 .then((data) => {
                     if (card.isLiked()) {
-                        likesList.splice(likesList.find((like) => {
-                            if (like._id === userId) {
-                                return likesList.indexOf(like);
-                            }
-                        }), 1);
+                        likesList.splice(
+                            likesList.indexOf(likesList.find((like) => {
+                                like._id === userId;
+                            })), 1);
+                        console.log(likesList);
                     } else {
-                        likesList.push(data.likes.find((like) => {
-                            if (like._id === userId) {
-                                return like;
-                            }
-                        }));
+                        likesList.push(
+                            data.likes.find((like) => {
+                                if (like._id === userId) {
+                                    return like;
+                                }
+                            }));
+                        console.log(likesList);
                     }
                 })
                 .catch((error) => { console.error(error); });
