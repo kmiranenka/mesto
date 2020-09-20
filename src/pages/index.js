@@ -41,8 +41,6 @@ function createCardElement(link, name, likesList, userId, userCardId, cardId) {
             popupWithFormSubmit.setEventListeners();
         },
         () => {
-            console.log(likesList);
-
             api.changeLikeCardStatus(cardId, card.isLiked())
                 .then((data) => {
                     if (card.isLiked()) {
@@ -50,7 +48,6 @@ function createCardElement(link, name, likesList, userId, userCardId, cardId) {
                             likesList.indexOf(likesList.find((like) => {
                                 like._id === userId;
                             })), 1);
-                        console.log(likesList);
                     } else {
                         likesList.push(
                             data.likes.find((like) => {
@@ -58,7 +55,6 @@ function createCardElement(link, name, likesList, userId, userCardId, cardId) {
                                     return like;
                                 }
                             }));
-                        console.log(likesList);
                     }
                 })
                 .catch((error) => { console.error(error); });
