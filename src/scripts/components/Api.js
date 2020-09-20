@@ -4,44 +4,40 @@ export default class Api {
         this._headers = config.headers
     }
 
+    _getResponseData(res) {
+        if (res.ok) {
+            return res.json();
+        } else {
+            return Promise.reject(new Error(`Ошибка: ${ res.status }`));
+        }
+    }
+
     getUserInfo() {
-        return fetch(this._url + '/users/me', {
+        return fetch(`${ this._url }/users/me`, {
                 headers: {
                     authorization: this._headers.authorization,
                 }
             })
             .then((res) => {
-                if (res.ok) {
-                    return res.json();
-                } else {
-                    return Promise.reject(`Ошибка: ${res.status}`);
-                }
-            })
-            .catch((err) => {
-                alert(`Ошибка: ${err}`);
-            })
+                return this._getResponseData(res);
+            });
+
     }
 
     getCards() {
-        return fetch(this._url + '/cards', {
+        return fetch(`${ this._url }/cards`, {
                 headers: {
                     authorization: this._headers.authorization,
                 }
             })
             .then((res) => {
-                if (res.ok) {
-                    return res.json();
-                } else {
-                    return Promise.reject(`Ошибка: ${res.status}`);
-                }
+                return this._getResponseData(res);
             })
-            .catch((err) => {
-                alert(`Ошибка: ${err}`);
-            })
+
     }
 
     updateUserInfo(nameInfo, jobInfo) {
-        return fetch(this._url + '/users/me', {
+        return fetch(`${this._url}/users/me`, {
                 method: 'PATCH',
                 headers: {
                     authorization: this._headers.authorization,
@@ -53,19 +49,13 @@ export default class Api {
                 })
             })
             .then((res) => {
-                if (res.ok) {
-                    return res.json();
-                } else {
-                    return Promise.reject(`Ошибка: ${res.status}`);
-                }
+                return this._getResponseData(res);
             })
-            .catch((err) => {
-                alert(`Ошибка: ${err}`);
-            })
+
     }
 
     addCard(cardName, cardLink) {
-        return fetch(this._url + '/cards', {
+        return fetch(`${this._url}/cards`, {
                 method: 'POST',
                 headers: {
                     authorization: this._headers.authorization,
@@ -77,76 +67,52 @@ export default class Api {
                 })
             })
             .then((res) => {
-                if (res.ok) {
-                    return res.json();
-                } else {
-                    return Promise.reject(`Ошибка: ${res.status}`);
-                }
+                return this._getResponseData(res);
             })
-            .catch((err) => {
-                alert(`Ошибка: ${err}`);
-            })
+
     }
 
     deleteCard(cardId) {
-        return fetch(this._url + '/cards/' + cardId, {
+        return fetch(`${this._url}/cards/${cardId}`, {
                 method: 'DELETE',
                 headers: {
                     authorization: this._headers.authorization,
                 }
             })
             .then((res) => {
-                if (res.ok) {
-                    return res.json();
-                } else {
-                    return Promise.reject(`Ошибка: ${res.status}`);
-                }
+                return this._getResponseData(res);
             })
-            .catch((err) => {
-                alert(`Ошибка: ${err}`);
-            })
+
     }
 
     changeLikeCardStatus(cardId, isLiked) {
         if (!isLiked) {
-            return fetch(this._url + '/cards/likes/' + cardId, {
+            return fetch(`${this._url}/cards/likes/${cardId}`, {
                     method: 'PUT',
                     headers: {
                         authorization: this._headers.authorization,
                     }
                 })
                 .then((res) => {
-                    if (res.ok) {
-                        return res.json();
-                    } else {
-                        return Promise.reject(`Ошибка: ${res.status}`);
-                    }
+                    return this._getResponseData(res);
                 })
-                .catch((err) => {
-                    alert(`Ошибка: ${err}`);
-                })
+
         } else {
-            return fetch(this._url + '/cards/likes/' + cardId, {
+            return fetch(`${this._url}/cards/likes/${cardId}`, {
                     method: 'DELETE',
                     headers: {
                         authorization: this._headers.authorization,
                     }
                 })
                 .then((res) => {
-                    if (res.ok) {
-                        return res.json();
-                    } else {
-                        return Promise.reject(`Ошибка: ${res.status}`);
-                    }
+                    return this._getResponseData(res);
                 })
-                .catch((err) => {
-                    alert(`Ошибка: ${err}`);
-                })
+
         }
     }
 
     updateUserAvatar(imageLink) {
-        return fetch(this._url + '/users/me/avatar', {
+        return fetch(`${this._url}/users/me/avatar`, {
                 method: 'PATCH',
                 headers: {
                     authorization: this._headers.authorization,
@@ -157,15 +123,9 @@ export default class Api {
                 })
             })
             .then((res) => {
-                if (res.ok) {
-                    return res.json();
-                } else {
-                    return Promise.reject(`Ошибка: ${res.status}`);
-                }
+                return this._getResponseData(res);
             })
-            .catch((err) => {
-                alert(`Ошибка: ${err}`);
-            })
+
     }
 
 }

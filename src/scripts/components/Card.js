@@ -24,13 +24,15 @@ export default class Card {
     generateCard() {
         this._element = this._getTemplate();
         this._setEventListeners();
+        const photoElement = this._element.querySelector('.element__photo');
+        const likesNumberElement = this._element.querySelector('.element__likes-number');
 
-        this._element.querySelector('.element__photo').src = this._link;
-        this._element.querySelector('.element__photo').alt = this._name;
+        photoElement.src = this._link;
+        photoElement.alt = this._name;
         this._element.querySelector('.element__name').textContent = this._name;
         if (this._likes.length > 0) {
-            this._element.querySelector('.element__likes-number').textContent = this._likes.length;
-            this._element.querySelector('.element__likes-number').classList.add('element__likes-number_add');
+            likesNumberElement.textContent = this._likes.length;
+            likesNumberElement.classList.add('element__likes-number_add');
         }
         if (this._userCardId === this._userId) {
             this._element.querySelector('.element__trash').classList.remove('element__trash_hidden');
@@ -45,23 +47,26 @@ export default class Card {
         return Boolean(this._likes.find(item => item._id === this._userId));
     }
 
+    _likesCount(evt) {
+        const likesElement = evt.target.parentElement.querySelector('.element__likes-number');
+        if (this.isLiked()) {
+            if (this._likes.length > 0) {
+                likesElement.textContent = this._likes.length - 1;
+            }
+            if (likesElement.textContent == 0) {
+                likesElement.classList.remove('element__likes-number_add');
+            }
+        } else {
+            if (likesElement.textContent === '' || likesElement.textContent == 0) {
+                likesElement.classList.add('element__likes-number_add');
+            }
+            likesElement.textContent = this._likes.length + 1;
+        }
+    }
+
     _setEventListeners() {
         this._element.querySelector('.element__like').addEventListener('click', (evt) => {
-
-            const likesElement = evt.target.parentElement.querySelector('.element__likes-number');
-            if (this.isLiked()) {
-                if (this._likes.length > 0) {
-                    likesElement.textContent = this._likes.length - 1;
-                }
-                if (likesElement.textContent == 0) {
-                    likesElement.classList.remove('element__likes-number_add');
-                }
-            } else {
-                if (likesElement.textContent === '' || likesElement.textContent == 0) {
-                    likesElement.classList.add('element__likes-number_add');
-                }
-                likesElement.textContent = this._likes.length + 1;
-            }
+            this._likesCount(evt);
             this._handleLikeClick();
             this._setLikeActive(evt);
         });
@@ -83,7 +88,7 @@ export default class Card {
     }
 
     _openCardPopup() {
-        this._handleCardClick();
+        this._handleCardClick(this._link, this._name);
     }
 
 }
