@@ -1,6 +1,6 @@
 # Web-сервис: Mesto
 
-**Ссылка на проект:** (https://kmiranenka.github.io/mesto/dist/index.html)
+**Ссылка на проект:** (https://kmiranenka.github.io/mesto/index.html)
 
 **О проекте:**
 Интерактивная страница, куда можно добавлять фотографии, удалять их и ставить лайки, редактировать информацию профиля.
@@ -13,6 +13,7 @@
 * JavaScript
 * WebPack сборка
 * REST API
+* Promise
 * DOM
 * Grid Layout
 * Flexbox-верстка
